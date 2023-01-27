@@ -2,21 +2,7 @@
 	<nb-layout-column>
 		<div class="w-full
 h-screen">
-			<div class="flex px-6 py-4 h-16 items-center gap-8 flex-wrap uppercase bg-white">
-				<div class="flex items-center text-lg">
-					<span class="text-green font-bold">u</span><span class="text-orange font-bold">diet</span>
-				</div>
-				<div class="flex mr-auto gap-3 flex-wrap text-black">
-					<span class="active:text-orange hover:text-orange cursor-pointer">home</span>
-					<span class="active:text-orange hover:text-orange cursor-pointer">recipes</span>
-					<span class="active:text-orange hover:text-orange cursor-pointer">meal planner</span>
-					<span class="active:text-orange hover:text-orange cursor-pointer">shooping</span>
-				</div>
-				<div class="flex gap-3">
-					<button class="uppercase text-orange">login</button>
-					<button class="uppercase text-white bg-orange px-2 py-1 rounded-3xl">sign up</button>
-				</div>
-			</div>
+			<app-header></app-header>
 			<div class="
 	bg-no-repeat bg-cover bg-top
 	bg-[url('src/assets/images/home.png')]
@@ -34,54 +20,10 @@ h-screen">
 					</div>
 					<div>
 						<ul class="mt-4">
-							<li
+							<li *ngFor="let menuItem of menuItems"
 								class="border rounded-full mb-4 cursor-pointer active:bg-orange active:text-white hover:bg-orange hover:text-white">
-								<button>
-									<div class="flex flex-row items-center">
-										<img class="mx-2" src="/assets/icons/eggs.png" />
-										<span>
-											Breakfast
-										</span>
-									</div>
-
-								</button>
-							</li>
-							<li
-								class="border rounded-full mb-4 cursor-pointer  active:bg-orange active:text-white hover:bg-orange hover:text-white">
-								<button>
-									<div class="flex flex-row items-center"><img class="mx-2"
-											src="/assets/icons/pizza.png" />
-										<span>Lunch</span>
-									</div>
-								</button>
-							</li>
-							<li
-								class="border rounded-full mb-4 cursor-pointer  active:bg-orange active:text-white hover:bg-orange hover:text-white">
-								<button>
-									<div class="flex flex-row items-center"><img class="mx-2"
-											src="/assets/icons/fish-food.png" />
-										<span>Dinner</span>
-									</div>
-								</button>
-							</li>
-							<li
-								class="border rounded-full mb-4 cursor-pointer  active:bg-orange active:text-white hover:bg-orange hover:text-white">
-								<button>
-									<div class="flex flex-row items-center"><img class="mx-2"
-											src="/assets/icons/spinach.png" />
-										<span>Salad</span>
-									</div>
-								</button>
-							</li>
-							<li
-								class="border rounded-full mb-4 cursor-pointer  active:bg-orange active:text-white hover:bg-orange hover:text-white">
-								<button>
-									<div class="flex flex-row items-center"><img class="mx-2"
-											src="/assets/icons/steak.png" />
-										<span>Main
-											course</span>
-									</div>
-								</button>
+								<app-icon-button [iconSrc]="menuItem.iconSrc" [label]="menuItem.label">
+								</app-icon-button>
 							</li>
 						</ul>
 					</div>
@@ -94,7 +36,7 @@ h-screen">
 
 						</div>
 						<div class="ml-auto">
-							<nb-select placeholder="Sort by:" [(selected)]="selectedItem">
+							<nb-select placeholder="Sort by:" [(selected)]="selectedItem" class="select">
 								<nb-select-label>
 									Sort by: {{ selectedItem }}
 								</nb-select-label>
@@ -104,65 +46,10 @@ h-screen">
 						</div>
 					</div>
 					<div class="grid gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 pt-6">
-						<div>
-							<div class="relative overflow-hidden rounded-2xl h-40"><img
-									class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
-									src="../assets/images/dish.jpg"></div>
-							<div class="flex gap-2">
-								<div class="flex"><span class="material-icons text-base mr-1">schedule</span><span
-										class="uppercase text-black">30 minutes</span></div>
-								<div class="flex"><span class="material-icons text-base mr-1">cookie</span><span
-										class="uppercase text-black">super easy</span></div>
-							</div>
-							<div class="uppercase text-black font-bold">raspberry cookies</div>
-						</div>
-						<div>
-							<div class="relative overflow-hidden rounded-2xl h-40"><img
-									class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
-									src="../assets/images/dish.jpg"></div>
-							<div class="flex gap-2">
-								<div class="flex"><span class="material-icons text-base mr-1">schedule</span><span
-										class="uppercase text-black">30 minutes</span></div>
-								<div class="flex"><span class="material-icons text-base mr-1">cookie</span><span
-										class="uppercase text-black">super easy</span></div>
-							</div>
-							<div class="uppercase text-black font-bold">raspberry cookies</div>
-						</div>
-						<div>
-							<div class="relative overflow-hidden rounded-2xl h-40"><img
-									class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
-									src="../assets/images/dish.jpg"></div>
-							<div class="flex gap-2">
-								<div class="flex"><span class="material-icons text-base mr-1">schedule</span><span
-										class="uppercase text-black">30 minutes</span></div>
-								<div class="flex"><span class="material-icons text-base mr-1">cookie</span><span
-										class="uppercase text-black">super easy</span></div>
-							</div>
-							<div class="uppercase text-black font-bold">raspberry cookies</div>
-						</div>
-						<div>
-							<div class="relative overflow-hidden rounded-2xl h-40"><img
-									class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
-									src="../assets/images/dish.jpg"></div>
-							<div class="flex gap-2">
-								<div class="flex"><span class="material-icons text-base mr-1">schedule</span><span
-										class="uppercase text-black">30 minutes</span></div>
-								<div class="flex"><span class="material-icons text-base mr-1">cookie</span><span
-										class="uppercase text-black">super easy</span></div>
-							</div>
-							<div class="uppercase text-black font-bold">raspberry cookies</div>
-						</div>
-						<div>
-							<div class="relative overflow-hidden rounded-2xl h-40"><img
-									class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
-									src="../assets/images/dish.jpg"></div>
-							<div class="flex gap-2">
-								<div class="flex"><span class="material-icons text-base mr-1">schedule</span><span
-										class="uppercase text-black">30 minutes</span></div>
-								<div class="flex"><span class="material-icons text-base mr-1">cookie</span><span
-										class="uppercase text-black">super easy</span></div>
-							</div>
-							<div class="uppercase text-black font-bold">raspberry cookies</div>
+						<div *ngFor="let recipe of recipes">
+							<app-recipe-card [recipeImg]="recipe.recipeImg" [time]="recipe.time"
+								[difficulty]="recipe.difficulty" [recipeTitle]="recipe.recipeTitle">
+							</app-recipe-card>
 						</div>
 					</div>
 				</div>

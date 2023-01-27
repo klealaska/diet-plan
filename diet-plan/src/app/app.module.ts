@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
 
-
 @NgModule({
   declarations: [
     AppComponent,
