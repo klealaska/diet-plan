@@ -9,7 +9,7 @@
         <span class="active:text-orange hover:text-orange cursor-pointer">shooping</span>
     </div>
     <div class="flex gap-3">
-        <button class="uppercase text-orange">login</button>
-        <button class="uppercase text-white bg-orange px-2 py-1 rounded-3xl">sign up</button>
+        <button class="uppercase text-orange"(click)="openDialog('login')">login</button>
+        <button class="uppercase text-white bg-orange px-2 py-1 rounded-3xl"(click)="openDialog('register')">sign up</button>
     </div>
 </div>
