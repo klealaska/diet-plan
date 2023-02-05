@@ -6,20 +6,13 @@
     </nb-card-header>
     <nb-card-body>
         <form [formGroup]="form">
-            <!-- <div class="flex flex-col gap-3">
-                <input type="text" formControlName="name" nbInput fullWidth shape="round" placeholder="Name">
-                <input type="text" formControlName="lastName" nbInput fullWidth shape="round" placeholder="lastName">
-                <input type="email" formControlName="email" nbInput fullWidth shape="round" placeholder="Email">
-                <input type="password" formControlName="password" nbInput fullWidth shape="round"
-                    placeholder="Password">
-            </div> -->
-            <ng-container *ngFor="let controlName of form.controls | keyvalue">
-                <input type="text" [formControlName]="controlName.key" nbInput fullWidth shape="round"
-                    placeholder="Name">
+            <ng-container *ngFor="let control of formControls">
+                <input [formControlName]="control.name" [type]="control.type" [placeholder]="control.placeholder"
+                    nbInput fullWidth shape="round" class="mb-4">
             </ng-container>
         </form>
     </nb-card-body>
     <nb-card-footer>
-        <button nbButton fullWidth status="success" (click)="close()" shape="round" type="submit">Continue</button>
+        <button nbButton fullWidth status="success" (click)="continue()" shape="round" type="submit" [disabled]="form.invalid">Continue</button>
     </nb-card-footer>
 </nb-card>

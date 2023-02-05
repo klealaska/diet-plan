@@ -6,7 +6,7 @@ import { RegisterLoginDialogComponent } from 'src/app/register-login-dialog/regi
 
 @Component({
   standalone: true,
-  imports:[
+  imports: [
     CommonModule
   ],
   selector: 'app-header',
@@ -15,18 +15,18 @@ import { RegisterLoginDialogComponent } from 'src/app/register-login-dialog/regi
 })
 export class HeaderComponent {
 
-  public authType=AuthType.Login;
+  public authType = AuthType.Login;
 
   constructor(private dialogService: NbDialogService) {
 
   }
 
-  openDialog(formType:string){
-      this.dialogService.open(RegisterLoginDialogComponent, {
-    context: {
-      formType: formType,
-    },
-  });
+  openDialog(formType: string) {
+    this.dialogService.open(RegisterLoginDialogComponent, {
+      context: {
+        formType: formType,
+      },
+    });
   }
 
 
